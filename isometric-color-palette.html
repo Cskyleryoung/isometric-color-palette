@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>
+            Isometric Color Palette
+        </title>
+
+        <style>
+            /* https://3dtransforms.desandro.com/cube */
+
+            body {
+                /* border: 1px solid #aaa; */
+                margin: 60px;
+                position: relative;
+            }
+
+            .canvas {
+                padding-top: calc(200px * 0.35);
+            }
+
+            .row {
+                display: flex;
+                flex-direction: row;
+                margin-top: calc(200px * -0.35);
+            }
+
+            .buffer {
+                width: calc((200px * 0.205) + (200px / 2 ));
+            }
+
+            .scene {
+                height: 200px;
+                margin-top: calc(200px*0.535);
+                margin-right: calc(200px*0.206);
+                margin-bottom: calc(200px * 0.035);
+                margin-left: calc(200px*0.206);
+                perspective: 1000000px;
+                width: 200px;
+            }
+
+            .cube__hinge {
+                height: 100%;
+                position: relative;
+                transform: rotateX(-30deg);
+                transform-style: preserve-3d;
+                width: 100%;
+            }
+
+            .cube {
+                height: 100%;
+                position: relative;
+                transform: translate3d(0, 0, -100px) rotateY(45deg);
+                transform-style: preserve-3d;
+                width: 100%;
+            }
+
+            .cube__face {
+                box-sizing: border-box;
+                height: 100%;
+                opacity: 0.5;
+                padding: 30px;
+                position: absolute;
+                width: 100%;
+            }
+
+            .cube__face--primary {
+                background: #00AFD7;
+                transform: rotateY(-90deg) translate3d(0, 0, 100px);
+            }
+
+            .cube__face--lighten {
+                background: #00cffe;
+                transform: rotateX(90deg) rotateZ(90deg) translate3d(0, 0, 100px);
+            }
+
+            .cube__face--darken {
+                background: #009fc3;
+                transform: rotate3d(0, 0, 0, 0) translate3d(0, 0, 100px);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="canvas">
+            <div class="row">
+                <div class="scene">
+                    <div class="cube__hinge">
+                        <div class="cube">
+                            <div class="cube__face cube__face--primary">Primary</div>
+                            <div class="cube__face cube__face--lighten">Lighten</div>
+                            <div class="cube__face cube__face--darken">Darken</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="scene">
+                    <div class="cube__hinge">
+                        <div class="cube">
+                            <div class="cube__face cube__face--primary">Primary</div>
+                            <div class="cube__face cube__face--lighten">Lighten</div>
+                            <div class="cube__face cube__face--darken">Darken</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="buffer"></div>
+    
+                <div class="scene">
+                    <div class="cube__hinge">
+                        <div class="cube">
+                            <div class="cube__face cube__face--primary">Primary</div>
+                            <div class="cube__face cube__face--lighten">Lighten</div>
+                            <div class="cube__face cube__face--darken">Darken</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="scene">
+                    <div class="cube__hinge">
+                        <div class="cube">
+                            <div class="cube__face cube__face--primary">Primary</div>
+                            <div class="cube__face cube__face--lighten">Lighten</div>
+                            <div class="cube__face cube__face--darken">Darken</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
